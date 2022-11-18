@@ -5,6 +5,9 @@
  * @var TaskEntity|null $task
  * @var bool            $editing
  */
+
+use Todo\Entities\TaskEntity;
+
 echo get_header( [ 'title' => $task->getTitle() ] );
 ?>
 <main class="container mx-auto">

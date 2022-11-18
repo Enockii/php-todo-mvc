@@ -1,5 +1,8 @@
 <?php
 
+namespace Todo\Controllers;
+use Todo\Services\TaskServiceInterface;
+
 abstract class AbstractController {
   
   protected TaskServiceInterface $taskService;

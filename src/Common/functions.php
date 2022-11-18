@@ -1,5 +1,7 @@
 <?php
 
+use const Todo\__PROJECT_ROOT__;
+
 /**
  * Gets the HTML code from a given template. You can pass optional parameters to display them into the template
  *

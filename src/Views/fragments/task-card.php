@@ -5,6 +5,9 @@
  * @var string $title;
  * @var string $description;
  */
+
+use Todo\Entities\TaskEntity;
+
 ?>
 
 <!-- Task -->

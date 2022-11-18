@@ -4,11 +4,11 @@
  * @var string $orderBy
  * @var bool $hideCompleted
  */
-$search = $_GET['search'];
-$orderBy = $_GET['order-by'];
-if (isset($_GET['only-show-completed'])) {
-    $hideCompleted = $_GET['only-show-completed'];
-}
+
+$search = $_GET['search'] ?? "";
+$orderBy = $_GET['order-by'] ?? "";
+$hideCompleted = $_GET['only-show-completed'] ?? "";
+
 ?>
 
 <form method="get" class="flex-1 flex flex-col space-y-4">

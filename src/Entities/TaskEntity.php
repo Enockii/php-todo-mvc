@@ -1,5 +1,7 @@
 <?php
 
+namespace Todo\Entities;
+
 class TaskEntity
 {
     private int $id;
@@ -33,7 +35,7 @@ class TaskEntity
      */
     public function getTitle(): string|null
     {
-        return $this->title;
+        return $this->title ?? "";
     }
 
     /**

@@ -3,6 +3,9 @@
  * @var TaskEntity[] $tasks
  */
 
+use Todo\Entities\TaskEntity;
+use const Todo\__PROJECT_ROOT__;
+
 echo get_header( [ 'title' => 'Accueil' ] );
 ?>
   <div class="container mx-auto flex flex-row items-stretch space-x-8">

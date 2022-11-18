@@ -1,5 +1,7 @@
 <?php
 
+namespace Todo\Common;
+
 trait SingletonTrait {
   
   /**

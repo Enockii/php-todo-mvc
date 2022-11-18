@@ -1,5 +1,8 @@
 <?php
 
+namespace Todo\Services;
+
+use Todo\Entities\TaskEntity;
 
 /**
  * Defines the common way of using a task service implementation

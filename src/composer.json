@@ -1,0 +1,15 @@
+{
+    "name": "enockii/php-todo-poo",
+    "type": "project",
+    "require": {
+        "webmozart/assert": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Todo\\" : "."
+        },
+        "files": [
+            "./Common/functions.php"
+        ]
+    }
+}
