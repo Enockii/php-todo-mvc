@@ -29,7 +29,7 @@ class MemoryTaskService implements TaskServiceInterface {
         ->setCompleted( $i % 2 === 0 )
         ->setCreatedAt( "2022-10-2" . $i % 10 . "T16:53:44" )
         ->setUpdatedAt("2022-10-24T16:53:44" )
-        ->setCompleted( "2022-10-24T16:53:44" );
+        ->setCompletedAt( "2022-10-24T16:53:44" );
     }
   }
   
@@ -47,30 +47,27 @@ class MemoryTaskService implements TaskServiceInterface {
    */
   public function list ( array $args = [] ) : array {
     $results = [];
-  
     // Filters results : we exclude unwanted tasks from output
     foreach ( $this->data as $task ) :
-      // Search filter
+        // Search filter
       if ( isset( $args['search'] ) && ! str_contains( $task->getTitle(), $args['search'] ) )
-        continue;
-    
-      // If we only want to show uncompleted tasks
+          continue;
+        // If we only want to show uncompleted tasks
       if ( isset( $args['hideCompleted'] ) && $args['hideCompleted'] && $task->isCompleted() )
         continue;
-    
       $results[] = $task;
     endforeach;
-  
     // Order by handling
     usort( $results, function ( TaskEntity $a, TaskEntity $b ) use ( $args ) {
       switch ( $args['orderBy'] ?? null ) :
         case "title":
-          return strnatcmp($a->getTitle(), $b->getTitle());
-      
-        case "completedAt":
+            return strnatcmp($a->getTitle(), $b->getTitle());
+
+          case "completedAt":
+
           $aTime = strtotime( $a->getCompletedAt() ?? 0 );
           $bTime = strtotime( $b->getCompletedAt() ?? 0 );
-        
+
           if ( $aTime === $bTime )
             return 0;
         
@@ -95,7 +92,7 @@ class MemoryTaskService implements TaskServiceInterface {
     return array(
       'page' => $args['page'] ?? 1,
       'perPage' => $args['perPage'] ?? 10,
-      'total' => count($results),
+      'total' => count($this->data),
       'tasks' => $results
     );
   }

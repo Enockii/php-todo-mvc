@@ -1,10 +1,10 @@
 <?php
 
 class TaskSingleController extends AbstractController {
-  
-  public function __construct() {
-    // TODO faire des trucs
-  }
+
+    public function __construct( TaskServiceInterface $taskService ) {
+        $this->taskService = $taskService;
+    }
   
   public function render() : void {
     // TODO remplacez les valeurs avec celles d'une tâche
