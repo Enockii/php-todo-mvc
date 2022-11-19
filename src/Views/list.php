@@ -58,13 +58,13 @@ echo get_header( [ 'title' => 'Accueil' ] );
           
           <!-- Pagination -->
           <div class="flex-1 flex flex-row justify-end space-x-4 my-8">
-            <a class="block bg-slate-50 hover:bg-slate-200 rounded p-4 text-sm cursor-pointer transition-colors duration-300">
+            <a class="block <?php echo isset($_GET['page']) ? ($_GET['page']=='1' ? "bg-teal-400" : "bg-teal-50") : '';  ?> hover:bg-slate-200 rounded p-4 text-sm cursor-pointer transition-colors duration-300" href="/?page=1" >
               1
             </a>
-            <a class="block bg-slate-50 hover:bg-slate-200 rounded p-4 text-sm cursor-pointer transition-colors duration-300">
+            <a class="block <?php echo isset($_GET['page']) ? ($_GET['page']=='2' ? "bg-teal-400" : "bg-teal-50") : '';  ?> hover:bg-slate-200 rounded p-4 text-sm cursor-pointer transition-colors duration-300" href="/?page=2">
               2
             </a>
-            <a class="block bg-slate-50 hover:bg-slate-200 rounded p-4 text-sm cursor-pointer transition-colors duration-300">
+            <a class="block <?php echo isset($_GET['page']) ? ($_GET['page']=='3' ? "bg-teal-400" : "bg-teal-50") : '';  ?> hover:bg-slate-200 rounded p-4 text-sm cursor-pointer transition-colors duration-300" href="/?page=3">
               3
             </a>
           </div>
